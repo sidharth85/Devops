@@ -18,7 +18,7 @@ jobs:
       run: docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}} docker.io
    
     - name: Push to Docker Hub
-      run: docker image push dockersidtest/dockrepo_1:serviceimage1
+      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/dockrepo_1:serviceimage1
       
     - name: Push to Docker Hub
-      run: docker image push dockersidtest/dockrepo_1:serviceimage2
+      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/dockrepo_1:serviceimage2
