@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      config: 'Release'
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core SDK
@@ -32,10 +29,10 @@ jobs:
       run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
 
     - name: Publish All
-      run: dotnet publish -c Release --no-restore 
+      run: dotnet publish -c Release --no-restore --output ./Publish
 
     - name: Upload Service1.UnitTests Build Artifact
       uses: actions/upload-artifact@v2
       with:
         name: Service1.UnitTests
-        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Debug/netcoreapp3.1/publish/
+        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Release/netcoreapp3.1/publish/
