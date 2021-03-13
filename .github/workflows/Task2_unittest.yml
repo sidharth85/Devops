@@ -25,8 +25,8 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
       
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
-      
-      
-    
+    - name: Unit Test1
+      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
+       
+    - name: Unit Test2
+      run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
