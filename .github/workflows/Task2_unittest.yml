@@ -23,16 +23,16 @@ jobs:
       run: dotnet restore
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build -c Release --no-restore
       
     - name: Service1.UnitTests
       run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
        
- #   - name: Service2.UnitTests
- #     run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
+    - name: Service2.UnitTests
+      run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
 
     - name: Publish All
-      run: dotnet publish
+      run: dotnet publish -c Release --no-restore 
 
     - name: Upload Service1.UnitTests Build Artifact
       uses: actions/upload-artifact@v2
