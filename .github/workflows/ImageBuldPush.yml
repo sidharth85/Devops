@@ -1,7 +1,7 @@
 name: DockerImagesCICD
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   buildPushImage:
