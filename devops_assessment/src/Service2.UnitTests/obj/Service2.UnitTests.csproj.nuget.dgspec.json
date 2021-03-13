@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj": {}
+    "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj": {}
   },
   "projects": {
-    "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj": {
+    "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj",
+        "projectUniqueName": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj",
         "projectName": "Service2.UnitTests",
-        "projectPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj",
+        "projectPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2.UnitTests\\Service2.UnitTests.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2.UnitTests\\obj\\",
+        "outputPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\Service2.csproj": {
-                "projectPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\Service2.csproj"
+              "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\Service2.csproj": {
+                "projectPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\Service2.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\Service2.csproj": {
+    "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\Service2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\Service2.csproj",
+        "projectUniqueName": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\Service2.csproj",
         "projectName": "Service2",
-        "projectPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\Service2.csproj",
+        "projectPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\Service2.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\obj\\",
+        "outputPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BgqoV0A4hYcl1ptLRN4Tn7S0eN3epR3RHKpi4JSljntaz+HiiWUkEqQydXYilynZyqtWYLpO5wYli4AGoUN8Ow==",
+  "dgSpecHash": "64Vs9ejzW9ZJvQLJ3uzxakwizGoikBnycoOLdU8vfHVNuK+4PNPck2ZkxEJJsIgRBXS7675tyDTWF5pG7+SYOw==",
   "success": true,
-  "projectFilePath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service1.IntegrationTests\\Service1.IntegrationTests.csproj",
+  "projectFilePath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service1.IntegrationTests\\Service1.IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.codecoverage\\16.4.0\\microsoft.codecoverage.16.4.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

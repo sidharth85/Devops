@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oNMI9lkEiNQCay5DMOfYS6jHKQbm7LbotGzEKAkBamDHN9d8pPKR96QhHeRcq1tIT7ZrcStTbfMXs5yCzsQMpg==",
+  "dgSpecHash": "Sfpw6CDOivm2gutgcQLyE0RSui8CE7LHZsrcLw7s00gcjfYtfVnK6T8M0ohFL0kpLSyQU+UFOfqe/Y86+5RA7w==",
   "success": true,
-  "projectFilePath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service1\\Service1.csproj",
+  "projectFilePath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service1\\Service1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.8\\microsoft.visualstudio.azure.containers.tools.targets.1.10.8.nupkg.sha512"
   ],
