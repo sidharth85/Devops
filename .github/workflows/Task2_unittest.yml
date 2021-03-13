@@ -38,4 +38,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Service1.UnitTests
-        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Release/netcoreapp3.1/publish/
+        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Debug/netcoreapp3.1/publish/
