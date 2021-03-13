@@ -6,7 +6,6 @@ C:\ProjectWork\GitMap\Feature\src\Service2\bin\Debug\netcoreapp3.1\Service2.runt
 C:\ProjectWork\GitMap\Feature\src\Service2\bin\Debug\netcoreapp3.1\Service2.runtimeconfig.dev.json
 C:\ProjectWork\GitMap\Feature\src\Service2\bin\Debug\netcoreapp3.1\Service2.dll
 C:\ProjectWork\GitMap\Feature\src\Service2\bin\Debug\netcoreapp3.1\Service2.pdb
-C:\ProjectWork\GitMap\Feature\src\Service2\obj\Debug\netcoreapp3.1\Service2.csprojAssemblyReference.cache
 C:\ProjectWork\GitMap\Feature\src\Service2\obj\Debug\netcoreapp3.1\Service2.AssemblyInfoInputs.cache
 C:\ProjectWork\GitMap\Feature\src\Service2\obj\Debug\netcoreapp3.1\Service2.AssemblyInfo.cs
 C:\ProjectWork\GitMap\Feature\src\Service2\obj\Debug\netcoreapp3.1\Service2.csproj.CoreCompileInputs.cache
