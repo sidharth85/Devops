@@ -15,7 +15,7 @@ jobs:
       run: docker build . --file src/Service2/Dockerfile --tag dockersidtest/dockrepo_1:serviceimage2
 
     - name: Login to DockerHub 
-      run: docker login -u dockersidtest -p sidMEH*%91 docker.io
+      run: docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}} docker.io
    
     - name: Push to Docker Hub
       run: docker image push dockersidtest/dockrepo_1:serviceimage1
