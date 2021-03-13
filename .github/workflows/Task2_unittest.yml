@@ -25,11 +25,17 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
       
-    - name: Unit Test1
+    - name: Service1.UnitTests
       run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
        
- #   - name: Unit Test2
+ #   - name: Service2.UnitTests
  #     run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
 
-    - name: Publish
+    - name: Publish All
       run: dotnet publish
+
+    - name: Upload Service1.UnitTests Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service1.UnitTests
+        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Release/netcoreapp3.1/publish/
