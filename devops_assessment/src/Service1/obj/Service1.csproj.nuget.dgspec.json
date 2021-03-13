@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service1\\Service1.csproj": {}
+    "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service1\\Service1.csproj": {}
   },
   "projects": {
-    "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service1\\Service1.csproj": {
+    "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service1\\Service1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service1\\Service1.csproj",
+        "projectUniqueName": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service1\\Service1.csproj",
         "projectName": "Service1",
-        "projectPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service1\\Service1.csproj",
+        "projectPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service1\\Service1.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service1\\obj\\",
+        "outputPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -88,11 +88,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\Service2.csproj",
+      "projectUniqueName": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\Service2.csproj",
       "projectName": "Service2",
-      "projectPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\Service2.csproj",
+      "projectPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\Service2.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\ProjectWork\\GitMap\\Feature\\devops_assessment\\src\\Service2\\obj\\",
+      "outputPath": "C:\\ProjectWork\\GitMap\\devops_assessment\\src\\Service2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
