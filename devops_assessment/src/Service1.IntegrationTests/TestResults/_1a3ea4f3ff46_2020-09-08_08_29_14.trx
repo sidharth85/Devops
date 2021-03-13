@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="73772872-21bd-4161-81b6-acf0243eca1d" name="@1a3ea4f3ff46 2020-09-08 08:29:14" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2020-09-08T08:29:14.0455781+00:00" queuing="2020-09-08T08:29:14.0455782+00:00" start="2020-09-08T08:29:12.4383716+00:00" finish="2020-09-08T08:29:14.0639165+00:00" />
+  <TestSettings name="default" id="3edd760f-1820-4168-8b47-3d4c3121bb17">
+    <Deployment runDeploymentRoot="_1a3ea4f3ff46_2020-09-08_08_29_14" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="dcad6de4-89f8-4023-b2db-49afee43d575" testId="c2d4b7c9-b6a5-5fc5-d9eb-cd8ea6b4cfcc" testName="Test1" computerName="1a3ea4f3ff46" duration="00:00:00.2552710" startTime="2020-09-08T08:29:13.0000000+00:00" endTime="2020-09-08T08:29:13.0000000+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dcad6de4-89f8-4023-b2db-49afee43d575" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Test1" storage="/repo/src/service1.integrationtests/bin/debug/netcoreapp3.1/service1.integrationtests.dll" id="c2d4b7c9-b6a5-5fc5-d9eb-cd8ea6b4cfcc">
+      <Execution id="dcad6de4-89f8-4023-b2db-49afee43d575" />
+      <TestMethod codeBase="/repo/src/Service1.IntegrationTests/bin/Debug/netcoreapp3.1/Service1.IntegrationTests.dll" adapterTypeName="executor://nunit3testexecutor/" className="Service1.IntegrationTests.Tests" name="Test1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c2d4b7c9-b6a5-5fc5-d9eb-cd8ea6b4cfcc" executionId="dcad6de4-89f8-4023-b2db-49afee43d575" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 3.15.1.0: Test execution started
+Running all tests in /repo/src/Service1.IntegrationTests/bin/Debug/netcoreapp3.1/Service1.IntegrationTests.dll
+   NUnit3TestExecutor converted 1 of 1 NUnit test cases
+NUnit Adapter 3.15.1.0: Test execution complete
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
