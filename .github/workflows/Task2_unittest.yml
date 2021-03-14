@@ -41,6 +41,12 @@ jobs:
 
 # If needed per service artifacts can be uploaded
 
+    - name: 'Login via Azure CLI'
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        allow-no-subscriptions: true
+
     - name: Deploy to Azure app
       uses: azure/webapps-deploy@v2
       with:
