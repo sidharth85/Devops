@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  Task2:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -37,7 +37,7 @@ jobs:
        
     - name: Execute Service2.UnitTests
       run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal --no-build --results-directory src/Service2.UnitTests/TestResults --logger trx
-    - name: Upload test results for Service1.UnitTests
+    - name: Upload test results for Service2.UnitTests
       uses: actions/upload-artifact@v2
       with:
         name: Service2_UnitTestResults
@@ -45,7 +45,6 @@ jobs:
       if: always()
  
   
- 
 # For integration Test
     - name: Publish
       run: dotnet publish -c Release --no-restore
@@ -63,5 +62,12 @@ jobs:
         publish-profile: ${{env.AZURE_WEBAPP_PUBLISH_PROFILE}}
         package: /home/runner/work/Devops/Devops/src/Service1/bin/Release/netcoreapp3.1/publish/
 
-    - name: Executing Service1.IntegrationTests
-      run: dotnet test src/Service1.IntegrationTests --no-restore --verbosity minimal
+    - name: Execute Service1.IntegrationTests
+      run: dotnet test src/Service1.IntegrationTests --no-restore --verbosity minimal --no-build --results-directory src/Service1.IntegrationTests/TestResults --logger trx
+    - name: Upload test results for Service1.IntegrationTests
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service1_IntegrationTestResults
+        path: src/Service1.IntegrationTests/TestResults  
+      if: always()
+ 
