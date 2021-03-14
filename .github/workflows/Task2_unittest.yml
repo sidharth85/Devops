@@ -24,20 +24,26 @@ jobs:
     - name: Build
       run: dotnet build -c Release --no-restore
       
-#    - name: Service1.UnitTests
-#      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
+    - name: Service1.UnitTests
+      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
        
-#    - name: Service2.UnitTests
-#      run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
+    - name: Service2.UnitTests
+      run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
 
     - name: Publish All
-      run: dotnet publish -c Release --no-restore --output ./Publish
+      run: dotnet publish -c Release --no-restore
 
-#   - name: Build Artifact
-#     uses: actions/upload-artifact@v2
-#     with:
-#        name: All services
-#        path: ./Publish
+    - name: Build Artifact Service2 UnitTests
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service2 UnitTests
+        path: /home/runner/work/Devops/Devops/src/Service2.UnitTests/bin/Release/netcoreapp3.1/publish/
+
+    - name: Build Artifact Service1 UnitTests
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service1 UnitTests
+        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Release/netcoreapp3.1/publish/
 
 # If needed per service artifacts can be uploaded
 
@@ -47,10 +53,9 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         allow-no-subscriptions: true
        
-
     - name: Deploy to Azure app
       uses: azure/webapps-deploy@v2
       with:
         app-name: ${{env.AZURE_WEBAPP_NAME}}
         publish-profile: ${{env.AZURE_WEBAPP_PUBLISH_PROFILE}}
-        package: ./Publish
+        package: /home/runner/work/Devops/Devops/src/Service1/bin/Release/netcoreapp3.1/publish/
