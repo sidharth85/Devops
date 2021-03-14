@@ -26,42 +26,42 @@ jobs:
 
 # For Unit Test
 
-    - name: Executing Service1.UnitTests
-      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal --no-build --results-directory src/Service1.UnitTests/TestResults --logger trx
-       
+    - name: Execute Service1.UnitTests
+      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal --no-build --results-directory src/Service1.UnitTests/TestResults --logger trx       
     - name: Upload test results for Service1.UnitTests
       uses: actions/upload-artifact@v2
       with:
-        name: Test result path
+        name: Service1_UnitTestResults
         path: src/Service1.UnitTests/TestResults   
-        if: always()
+      if: always()
        
- #   - name: Executing Service2.UnitTests
- #     run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
-
- #   - name: Publish Services
- #     run: dotnet publish -c Release --no-restore
-        
- #   - name: Upload Artifact Service2 UnitTests
- #     uses: actions/upload-artifact@v2
- #     with:
- #       name: Service2 UnitTests
- #       path: /home/runner/work/Devops/Devops/src/Service2.UnitTests/bin/Release/netcoreapp3.1/publish/
-
+    - name: Execute Service2.UnitTests
+      run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal --no-build --results-directory src/Service2.UnitTests/TestResults --logger trx
+    - name: Upload test results for Service1.UnitTests
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service2_UnitTestResults
+        path: src/Service2.UnitTests/TestResults   
+      if: always()
+ 
+  
+ 
 # For integration Test
-
-#    - name: Login via Azure CLI
-#      uses: azure/login@v1
-#      with:
-#        creds: ${{ secrets.AZURE_CREDENTIALS }}
-#        allow-no-subscriptions: true
+    - name: Publish
+      run: dotnet publish -c Release --no-restore
+ 
+    - name: Login via Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        allow-no-subscriptions: true
        
-#    - name: Deploy to Azure app
-#      uses: azure/webapps-deploy@v2
-#      with:
-#        app-name: ${{env.AZURE_WEBAPP_NAME}}
-#        publish-profile: ${{env.AZURE_WEBAPP_PUBLISH_PROFILE}}
-#        package: /home/runner/work/Devops/Devops/src/Service1/bin/Release/netcoreapp3.1/publish/
+    - name: Deploy to Azure app
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{env.AZURE_WEBAPP_NAME}}
+        publish-profile: ${{env.AZURE_WEBAPP_PUBLISH_PROFILE}}
+        package: /home/runner/work/Devops/Devops/src/Service1/bin/Release/netcoreapp3.1/publish/
 
-#    - name: Executing Service1.IntegrationTests
-#      run: dotnet test src/Service1.IntegrationTests --no-restore --verbosity minimal
+    - name: Executing Service1.IntegrationTests
+      run: dotnet test src/Service1.IntegrationTests --no-restore --verbosity minimal
