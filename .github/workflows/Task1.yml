@@ -1,6 +1,10 @@
 name: Task1
+env:  
+  DOCKER_HUB_REPONAME : dockrepo_1
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -9,16 +13,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image for service1
-      run: docker build . --file src/Service1/Dockerfile --tag dockersidtest/dockrepo_1:serviceimage1
+      run: docker build . --file src/Service1/Dockerfile --tag ${{secrets.DOCKER_HUB_USERNAME}}/${{env.DOCKER_HUB_REPONAME}}:serviceimage1
       
     - name: Build the Docker image for service2
-      run: docker build . --file src/Service2/Dockerfile --tag dockersidtest/dockrepo_1:serviceimage2
+      run: docker build . --file src/Service2/Dockerfile --tag ${{secrets.DOCKER_HUB_USERNAME}}/${{env.DOCKER_HUB_REPONAME}}:serviceimage2
 
     - name: Login to DockerHub 
       run: docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}} docker.io
    
     - name: Push to Docker Hub
-      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/dockrepo_1:serviceimage1
+      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/${{env.DOCKER_HUB_REPONAME}}:serviceimage1
       
     - name: Push to Docker Hub
-      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/dockrepo_1:serviceimage2
+      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/${{env.DOCKER_HUB_REPONAME}}:serviceimage2
