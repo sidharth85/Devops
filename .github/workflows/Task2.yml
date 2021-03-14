@@ -34,7 +34,7 @@ jobs:
       with:
         name: Test result path
         path: src/Service1.UnitTests/TestResults   
-        if: ${{ always() }}
+        if: always()
        
  #   - name: Executing Service2.UnitTests
  #     run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
