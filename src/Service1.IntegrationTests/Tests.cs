@@ -14,7 +14,7 @@ namespace Service1.IntegrationTests
         [Test]
         public void Test1()
         {
-            WebRequest myWebRequest = WebRequest.Create("http://service1:5000/weatherforecast");
+            WebRequest myWebRequest = WebRequest.Create("http://aspnetcore-service.azurewebsites.net/weatherforecast");
 
             WebResponse myWebResponse = myWebRequest.GetResponse();
             Assert.IsNotNull(myWebResponse);
