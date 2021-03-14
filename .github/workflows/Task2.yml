@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
 jobs:
-  Task2:
+  CICDwithTesting:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
