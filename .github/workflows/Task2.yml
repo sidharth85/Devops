@@ -27,7 +27,7 @@ jobs:
 # For Unit Test
 
     - name: Executing Service1.UnitTests
-      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal --no-build --results-directory src/Service1.UnitTests/TestResults
+      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal --no-build --results-directory src/Service1.UnitTests/TestResults --logger trx
        
     - name: Upload test results for Service1.UnitTests
       uses: actions/upload-artifact@v2
