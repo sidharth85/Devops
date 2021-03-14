@@ -1,10 +1,10 @@
-name: DockerImagesCICD
+name: Task1-DockerImages
 on:
   push:
     branches: [ main ]
 
 jobs:
-  buildPushImage:
+  DockerImageCICD:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
