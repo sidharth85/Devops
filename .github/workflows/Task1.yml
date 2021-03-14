@@ -1,0 +1,24 @@
+name: DockerImagesCICD
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  buildPushImage:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image for service1
+      run: docker build . --file src/Service1/Dockerfile --tag dockersidtest/dockrepo_1:serviceimage1
+      
+    - name: Build the Docker image for service2
+      run: docker build . --file src/Service2/Dockerfile --tag dockersidtest/dockrepo_1:serviceimage2
+
+    - name: Login to DockerHub 
+      run: docker login -u ${{secrets.DOCKER_HUB_USERNAME}} -p ${{secrets.DOCKER_HUB_PASSWORD}} docker.io
+   
+    - name: Push to Docker Hub
+      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/dockrepo_1:serviceimage1
+      
+    - name: Push to Docker Hub
+      run: docker image push ${{secrets.DOCKER_HUB_USERNAME}}/dockrepo_1:serviceimage2
