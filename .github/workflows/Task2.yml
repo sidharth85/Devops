@@ -27,7 +27,7 @@ jobs:
 # For Unit Test
 
     - name: Executing Service1.UnitTests
-      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
+      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal --no-build --results-directory src/Service1.UnitTests/TestResults
        
     - name: Executing Service2.UnitTests
       run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
