@@ -23,31 +23,33 @@ jobs:
 
     - name: Build
       run: dotnet build -c Release --no-restore
-      
-    - name: Service1.UnitTests
+
+# For Unit Test
+
+    - name: Executing Service1.UnitTests
       run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
        
-    - name: Service2.UnitTests
+    - name: Executing Service2.UnitTests
       run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
 
-    - name: Publish All
+    - name: Publish Services
       run: dotnet publish -c Release --no-restore
 
-    - name: Build Artifact Service2 UnitTests
+    - name: Upload Artifact Service1 UnitTests
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service1 UnitTests
+        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Release/netcoreapp3.1/publish/
+        
+    - name: Upload Artifact Service2 UnitTests
       uses: actions/upload-artifact@v2
       with:
         name: Service2 UnitTests
         path: /home/runner/work/Devops/Devops/src/Service2.UnitTests/bin/Release/netcoreapp3.1/publish/
 
-    - name: Build Artifact Service1 UnitTests
-      uses: actions/upload-artifact@v2
-      with:
-        name: Service1 UnitTests
-        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Release/netcoreapp3.1/publish/
+# For integration Test
 
-# If needed per service artifacts can be uploaded
-
-    - name: 'Login via Azure CLI'
+    - name: Login via Azure CLI
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
@@ -59,3 +61,6 @@ jobs:
         app-name: ${{env.AZURE_WEBAPP_NAME}}
         publish-profile: ${{env.AZURE_WEBAPP_PUBLISH_PROFILE}}
         package: /home/runner/work/Devops/Devops/src/Service1/bin/Release/netcoreapp3.1/publish/
+
+    - name: Executing Service1.IntegrationTests
+      run: dotnet test src/Service1.IntegrationTests --no-restore --verbosity minimal
