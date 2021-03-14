@@ -1,0 +1,66 @@
+name: Task2
+env:
+  NETCORE_VERSION: '3.1.101'
+  AZURE_WEBAPP_NAME: aspnetcore-service
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{env.NETCORE_VERSION}}
+
+    - name: Install dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build -c Release --no-restore
+
+# For Unit Test
+
+    - name: Executing Service1.UnitTests
+      run: dotnet test src/Service1.UnitTests --no-restore --verbosity minimal
+       
+    - name: Executing Service2.UnitTests
+      run: dotnet test src/Service2.UnitTests --no-restore --verbosity minimal
+
+    - name: Publish Services
+      run: dotnet publish -c Release --no-restore
+
+    - name: Upload Artifact Service1 UnitTests
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service1 UnitTests
+        path: /home/runner/work/Devops/Devops/src/Service1.UnitTests/bin/Release/netcoreapp3.1/publish/
+        
+    - name: Upload Artifact Service2 UnitTests
+      uses: actions/upload-artifact@v2
+      with:
+        name: Service2 UnitTests
+        path: /home/runner/work/Devops/Devops/src/Service2.UnitTests/bin/Release/netcoreapp3.1/publish/
+
+# For integration Test
+
+    - name: Login via Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        allow-no-subscriptions: true
+       
+    - name: Deploy to Azure app
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{env.AZURE_WEBAPP_NAME}}
+        publish-profile: ${{env.AZURE_WEBAPP_PUBLISH_PROFILE}}
+        package: /home/runner/work/Devops/Devops/src/Service1/bin/Release/netcoreapp3.1/publish/
+
+    - name: Executing Service1.IntegrationTests
+      run: dotnet test src/Service1.IntegrationTests --no-restore --verbosity minimal
